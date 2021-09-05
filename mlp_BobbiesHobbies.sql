@@ -51,3 +51,14 @@ INSERT INTO hobbies (pony_id, name) VALUES (6,"Burning Down Barns While Reading"
 
 SELECT * FROM hobbies WHERE pony_id = (SELECT id AS pony_id FROM ponies WHERE name = 'Twilight Sparkle');
 
+/*Select the 2 tables with a join so that you can see each pony's name next to their hobby.*/
+
+SELECT ponies.name, hobbies.name FROM ponies
+JOIN hobbies ON ponies.id = hobbies.pony_id;
+
+/*Show only the name and hobbies of 'Twilight Sparkle', using JOIN combined with WHERE.*/
+
+SELECT ponies.name, hobbies.name FROM ponies 
+JOIN hobbies 
+ON ponies.id = hobbies.pony_id
+WHERE ponies.name = "Twilight Sparkle";
